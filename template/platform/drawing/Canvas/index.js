@@ -65,7 +65,6 @@ const privates = new PrivateFields(function(props = {}) {
  */
 export class Canvas {
 	constructor(props) {
-        super();
         privates.setup(this);
         props = properties.merge(this, props);
 
