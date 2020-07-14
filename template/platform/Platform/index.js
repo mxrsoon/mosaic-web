@@ -1,11 +1,10 @@
-import { Viewport } from "../core/index.js";
-import { Platform as PlatformBase } from "../../mosaic/platform/index.js";
-import { Color } from "../../mosaic/drawing/index.js";
+import { Viewport } from "mosaic/platform/core/index.js";
+import { Color } from "mosaic/drawing/index.js";
 
 /**
  * Contains information about the current web platform and associated managers.
  */
-export class Platform extends PlatformBase {
+export class Platform {
     /**
      * Web platform user-agent string.
      * @type {string}

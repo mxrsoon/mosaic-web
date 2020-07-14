@@ -1,7 +1,6 @@
-import { PrivateFields, PropertySet } from "../../../mosaic/utils/index.js";
-import { Style } from "../../../mosaic/drawing/index.js";
-import { Canvas as CanvasBase } from "../../../mosaic/platform/drawing/index.js";
-import { TextOptions, TextMetrics } from "../../../mosaic/drawing/text/index.js";
+import { PrivateFields, PropertySet } from "mosaic/utils/index.js";
+import { Style } from "mosaic/drawing/index.js";
+import { TextOptions, TextMetrics } from "mosaic/drawing/text/index.js";
 
 /* Default properties for WebCanvas class. */
 const properties = new PropertySet(function() {

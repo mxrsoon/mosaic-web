@@ -1,5 +1,4 @@
-import { Viewport as ViewportBase } from "../../../mosaic/platform/core/index.js";
-import { Canvas } from "../../drawing/index.js";
+import { Canvas } from "mosaic/platform/drawing/index.js";
 
 function createCanvas() {
     const canvasElement = document.createElement("canvas");
@@ -32,7 +31,7 @@ const canvas = createCanvas();
 /**
  * A class to represent application viewports.
  */
-export class Viewport extends ViewportBase {
+export class Viewport {
     /**
      * Width of the viewport.
      * @type {number}

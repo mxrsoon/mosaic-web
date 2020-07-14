@@ -3,7 +3,8 @@
 		"baseUrl": ".",
 		"paths": {
 			"mosaic/platform/*": ["./platform/*"],
-			"mosaic/*": ["./mosaic/*"]
+			"mosaic/*": ["./mosaic/*"],
+			"lib/*": ["./lib/*"]
 		}
 	}
 }

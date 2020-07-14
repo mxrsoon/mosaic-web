@@ -1,0 +1,23 @@
+{
+  "name": "mosaic-web",
+  "version": "0.0.1",
+  "description": "Web runner for Mosaic applications",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wazybr/mosaic-web.git"
+  },
+  "author": "wazybr",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wazybr/mosaic-web/issues"
+  },
+  "homepage": "https://github.com/wazybr/mosaic-web#readme",
+  "dependencies": {
+    "fs-extra": "^9.0.1"
+  }
+}
