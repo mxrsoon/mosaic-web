@@ -63,7 +63,7 @@ const privates = new PrivateFields(function(props = {}) {
 /**
  * Web-based canvas for drawing paths, shapes, text and images.
  */
-export class Canvas extends CanvasBase {
+export class Canvas {
 	constructor(props) {
         super();
         privates.setup(this);
