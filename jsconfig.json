@@ -1,0 +1,9 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"paths": {
+			"mosaic/platform/*": ["./platform/*"],
+			"mosaic/*": ["./mosaic/*"]
+		}
+	}
+}
