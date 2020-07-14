@@ -1,5 +1,7 @@
 import { Canvas } from "mosaic/platform/drawing/index.js";
+import { Static, EventHandlerList } from "mosaic/utils/index.js";
 
+/* Create main canvas for the viewport. */
 function createCanvas() {
     const canvasElement = document.createElement("canvas");
     canvasElement.style.display = "block";
@@ -28,10 +30,25 @@ function createCanvas() {
 
 const canvas = createCanvas();
 
+/* Private fields for Viewport class. */
+const privates = {
+    events: {
+        onResize: new EventHandlerList()
+    }
+};
+
 /**
  * A class to represent application viewports.
  */
-export class Viewport {
+export class Viewport extends Static {
+    /**
+     * Viewport resize event handlers.
+     * @type {EventHandlerList}
+     */
+    static get onResize() {
+        return privates.events.onResize;
+    }
+
     /**
      * Width of the viewport.
      * @type {number}

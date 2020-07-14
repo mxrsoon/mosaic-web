@@ -1,10 +1,11 @@
 import { Viewport } from "mosaic/platform/core/index.js";
 import { Color } from "mosaic/drawing/index.js";
+import { Static } from "mosaic/utils/index.js";
 
 /**
  * Contains information about the current web platform and associated managers.
  */
-export class Platform {
+export class Platform extends Static {
     /**
      * Web platform user-agent string.
      * @type {string}
@@ -39,10 +40,18 @@ export class Platform {
         themeMeta.content = value.toHex();
     }
 
+    /**
+     * Short name of the current platform.
+     * @type {string}
+     */
     static get name() {
         return "web";
     }
 
+    /**
+     * The viewport manager for the current platform.
+     * @type {Viewport}
+     */
     static get viewport() {
         return Viewport;
     }
