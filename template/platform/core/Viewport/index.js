@@ -120,8 +120,8 @@ export class Viewport extends Static {
 
 Viewport.onResize.add((width, height) => {
     Viewport.canvas.scaleFactor = Viewport.scaleFactor;
-    Viewport.canvas.width = width;
-    Viewport.canvas.height = height;
+    Viewport.canvas.width = Viewport.width;
+    Viewport.canvas.height = Viewport.height;
 });
 
 window.addEventListener("click", (e) => Viewport.onClick.invoke({x: e.clientX, y: e.clientY}));
@@ -129,3 +129,5 @@ window.addEventListener("pointerdown", (e) => Viewport.onPointerDown.invoke({x: 
 window.addEventListener("pointermove", (e) => Viewport.onPointerMove.invoke({x: e.clientX, y: e.clientY}));
 window.addEventListener("pointerup", (e) => Viewport.onPointerUp.invoke({x: e.clientX, y: e.clientY}));
 window.addEventListener("resize", () => Viewport.onResize.invoke(window.innerWidth, window.innerHeight));
+
+Viewport.onResize.invoke(window.innerWidth, window.innerHeight);
