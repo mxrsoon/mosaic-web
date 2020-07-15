@@ -1,6 +1,6 @@
-import { Viewport } from "mosaic/platform/core/index.js";
-import { Color } from "mosaic/drawing/index.js";
-import { Static } from "mosaic/utils/index.js";
+import { Viewport } from "@mosaic/platform/core/index.js";
+import { Color } from "@mosaic/drawing/index.js";
+import { Static } from "@mosaic/utils/index.js";
 
 /**
  * Contains information about the current web platform and associated managers.
