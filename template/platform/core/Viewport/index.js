@@ -33,6 +33,10 @@ const canvas = createCanvas();
 /* Private fields for Viewport class. */
 const privates = {
     events: {
+        onClick: new EventHandlerList(),
+        onPointerDown: new EventHandlerList(),
+        onPointerMove: new EventHandlerList(),
+        onPointerUp: new EventHandlerList(),
         onResize: new EventHandlerList()
     }
 };
@@ -41,6 +45,38 @@ const privates = {
  * A class to represent application viewports.
  */
 export class Viewport extends Static {
+    /**
+     * Viewport click event handlers.
+     * @type {EventHandlerList}
+     */
+    static get onClick() {
+        return privates.events.onClick;
+    }
+
+    /**
+     * Viewport pointer down event handlers.
+     * @type {EventHandlerList}
+     */
+    static get onPointerDown() {
+        return privates.events.onPointerDown;
+    }
+
+    /**
+     * Viewport pointer move event handlers.
+     * @type {EventHandlerList}
+     */
+    static get onPointerMove() {
+        return privates.events.onPointerMove;
+    }
+
+    /**
+     * Viewport pointer up event handlers.
+     * @type {EventHandlerList}
+     */
+    static get onPointerUp() {
+        return privates.events.onPointerUp;
+    }
+
     /**
      * Viewport resize event handlers.
      * @type {EventHandlerList}
@@ -88,4 +124,8 @@ Viewport.onResize.add((width, height) => {
     Viewport.canvas.height = height;
 });
 
+window.addEventListener("click", (e) => Viewport.onClick.invoke({x: e.clientX, y: e.clientY}));
+window.addEventListener("pointerdown", (e) => Viewport.onPointerDown.invoke({x: e.clientX, y: e.clientY}));
+window.addEventListener("pointermove", (e) => Viewport.onPointerMove.invoke({x: e.clientX, y: e.clientY}));
+window.addEventListener("pointerup", (e) => Viewport.onPointerUp.invoke({x: e.clientX, y: e.clientY}));
 window.addEventListener("resize", () => Viewport.onResize.invoke(window.innerWidth, window.innerHeight));
