@@ -1,5 +1,5 @@
-import { Canvas } from "@mosaic/platform/drawing/index.js";
-import { Static, EventHandlerList } from "@mosaic/utils/index.js";
+import { Canvas } from "#mosaic/platform/drawing/index.js";
+import { Static, EventHandlerList } from "#mosaic/utils/index.js";
 
 /* Create main canvas for the viewport. */
 function createCanvas() {
