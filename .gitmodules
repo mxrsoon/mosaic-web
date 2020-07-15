@@ -1,3 +1,0 @@
-[submodule "template/mosaic"]
-	path = template/mosaic
-	url = git@github.com:wazybr/mosaic
