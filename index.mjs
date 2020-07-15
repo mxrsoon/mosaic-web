@@ -11,12 +11,13 @@ export default class MosaicWebPlatform {
 		const templatePath = path.resolve(url.fileURLToPath(path.dirname(import.meta.url)), "template");
 
 		await fs.emptyDir(outPath);
-		await fs.copy(path.resolve(templatePath, "platform"), path.resolve(outPath, "platform"));
-		await fs.copy(path.resolve(templatePath, "index.html"), path.resolve(outPath, "index.html"));
-		await fs.copy(path.resolve(templatePath, "jsconfig.json"), path.resolve(outPath, "jsconfig.json"));
 		await fs.copy(appPath, path.resolve(outPath, "app"));
 		await fs.copy(libPath, path.resolve(outPath, "lib"));
 		await fs.copy(mosaicPath, path.resolve(outPath, "mosaic"));
+		await fs.emptyDir(path.resolve(outPath, "mosaic", "platform"));
+		await fs.copy(path.resolve(templatePath, "platform"), path.resolve(outPath, "mosaic", "platform"));
+		await fs.copy(path.resolve(templatePath, "index.html"), path.resolve(outPath, "index.html"));
+		await fs.copy(path.resolve(templatePath, "jsconfig.json"), path.resolve(outPath, "jsconfig.json"));
 
 		return outPath;
 	}
