@@ -4,9 +4,6 @@
   "description": "Web runner for Mosaic applications",
   "type": "module",
   "main": "index.mjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/wazybr/mosaic-web.git"
