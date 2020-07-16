@@ -119,9 +119,9 @@ export class Viewport extends Static {
 }
 
 Viewport.onResize.add((width, height) => {
+    Viewport.canvas.width = Viewport.width * Viewport.scaleFactor;
+    Viewport.canvas.height = Viewport.height * Viewport.scaleFactor;
     Viewport.canvas.scaleFactor = Viewport.scaleFactor;
-    Viewport.canvas.width = Viewport.width;
-    Viewport.canvas.height = Viewport.height;
 });
 
 window.addEventListener("click", (e) => Viewport.onClick.invoke({x: e.clientX, y: e.clientY}));

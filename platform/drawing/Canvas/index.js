@@ -91,7 +91,8 @@ export class Canvas {
 
 	set width(val) {
         if (this.resizable) {
-            privates(this).internalCanvas.width = val;
+			privates(this).internalCanvas.width = val;
+			this.scaleFactor = this.scaleFactor;
         } else {
             throw new Error("This canvas is not resizable");
         }
@@ -103,7 +104,8 @@ export class Canvas {
     
 	set height(val) {
         if (this.resizable) {
-            privates(this).internalCanvas.height = val;
+			privates(this).internalCanvas.height = val;
+			this.scaleFactor = this.scaleFactor;
         } else {
             throw new Error("This canvas is not resizable");
         }
