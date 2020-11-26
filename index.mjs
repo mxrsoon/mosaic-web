@@ -1,6 +1,7 @@
 import path from "path";
 import fs from "fs-extra";
 import url from "url";
+import express from "express";
 
 export default class MosaicWebPlatform {
 	static async build(options) {
@@ -22,5 +23,16 @@ export default class MosaicWebPlatform {
 		await fs.copy(platformPath, path.resolve(outPath, "mosaic", "platform"));
 
 		return outPath;
+	}
+
+	static async run(options) {
+		const outPath = path.resolve(options.out);
+		const cliOptions = options.cliOptions;
+
+		const port = cliOptions["port"] || 8080;
+
+		const app = express();
+		app.use("/", express.static(outPath));
+		app.listen(port);
 	}
 }
