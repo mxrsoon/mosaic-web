@@ -33,6 +33,8 @@ export default class MosaicWebPlatform {
 
 		const app = express();
 		app.use("/", express.static(outPath));
-		app.listen(port);
+		app.listen(port, () => {
+			console.log(`Serving project at port ${port}. Press CTRL+C to stop.`);
+		});
 	}
 }
